@@ -4,7 +4,7 @@ This repo is created to test how to use NGINX as a load balancer together with D
 
 The idea is to distribute requests and load across multiple instances of the server application.
 
-With docker compose, you are setting up three containers. Two server containers and one nginx container.
+With docker compose, you are setting up three containers. Two server containers and one nginx server container.
 
 # Prerequisites
 
