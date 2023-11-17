@@ -36,3 +36,9 @@ Open a browser (preferably in incognito mode) and go to:
 ```localhost:80```
 
 If you refresh the page, you should see the port number changing. This is the idea behind load balancing, where NGINX distributes the requests across the different servers.
+
+You can also use the curl command to access the NGINX server:
+
+```curl -s localhost:80```
+
+Repeat the command to see NGINX in action.
