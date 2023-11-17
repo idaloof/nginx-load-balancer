@@ -8,4 +8,5 @@ The idea is to distribute requests and load across multiple instances of the ser
 
 Clone the repo with git clone in your shell.
 
-```git clone ...```
+```git clone https://github.com/idaloof/nginx-load-balancer.git```
+
