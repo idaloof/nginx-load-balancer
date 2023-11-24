@@ -77,4 +77,4 @@ You can see the results below.
 
 ![Locus Test Report - tables](./img/image.png)
 
-![Locus Test Report - charts](./img/image2.png)
+![Locus Test Report - charts](./img/image3.png)
