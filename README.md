@@ -65,3 +65,6 @@ Close: ```docker-compose down --rmi all```
 
 # Results
 
+The results were a bit surprising. 
+
+![Locus Test Report - with load balance](./img/image.png)
