@@ -1,0 +1,38 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./server
+    environment:
+      - PORT=1337
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./server/app/index.js:/server/app/index.js
+      - ./server/app/views:/server/app/views
+      - ./server/app/public:/server/app/public
+      - ./server/app/models:/server/app/models
+
+  mariadb:
+    image: "mariadb"
+    container_name: "mariadb"
+    working_dir: "/docker-entrypoint-initdb.d"
+    volumes:
+      - ./mariadb/:/docker-entrypoint-initdb.d
+    environment:
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
+    restart: 
+        "always"
+
+  locust:
+    build:
+      context: ./locust
+    container_name: "locust"
+    working_dir: "/usr/src/app"
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./locust:/usr/src/app
+    depends_on:
+      - server
+      - mariadb

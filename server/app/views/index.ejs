@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NGINX test page</title>
+        <link rel="stylesheet" href="/style/style.css">
+    </head>
+
+    <header>
+    <div class="header-container">
+        <h1>NGINX LOAD BALANCER</h1>
+    </div>
+        <nav>
+            <ul>
+                <li><a id="anchor" href="">Reload page</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <body>
+        <main>
+            <div class="container">
+                <% if (port === 4000) { %>
+                <p class="error">NGINX not running.</p>
+                <p>If you want to see NGINX in action you have to run the following from the root of the repo:</p>
+                <code>docker-compose up --build</code>
+                <% } %>
+                <p>The server port is now <%= port %>.</p>
+            </div>
+        </main>
+    </body>
+
+    <footer>
+        <p>You made it!</p>
+        <p>&copy; No copyright </p>
+    </footer>
+
+    <script type="text/javascript" src="/js/main.js"></script>
+</html>

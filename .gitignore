@@ -1,1 +1,6 @@
+load_test_reports
+
+locust/__pycache__
+locust_nginx/__pycache__
+
 node_modules

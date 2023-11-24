@@ -1,11 +1,9 @@
 FROM node:latest
 
-WORKDIR /server
+WORKDIR /server/app
 
-COPY package*.json .
+COPY app/package*.json .
 
 RUN npm install
-
-COPY index.js .
 
 CMD ["npm", "start"]
