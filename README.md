@@ -16,10 +16,23 @@ https://docs.locust.io/en/stable/
 
 ## Repo content
 
-The contents of the repo (high level):
+Study these parts of the repo to get a better overview of it:
 
-- An express server with one endpoint ```/users``` where user data for 1000 users is fetched from MariaDB (credit: Pontus Åkerberg)
-- 
+- nginx.conf --> this is where you configure your NGINX server.
+- locust directories --> this is where you configure Locust
+
+Remember that everything is tied together. For example, a change of ports in the docker-compose file (NGINX) must be followed by
+corresponding changes in the nginx.conf file.
+
+# How to use
+
+Clone the repo:
+
+```git clone https://github.com/idaloof/nginx-load-balancer.git```
+
+Install express:
+
+```npm install```
 
 ## Start testing
 The repo contains two different test setups, one with and one without load balancing with NGINX.
@@ -47,53 +60,4 @@ Go to ```localhost:8089``` and start swarming!
 
 Close: ```docker-compose down --rmi all```
 
-
-
-This repo is created to test how to use NGINX as a load balancer together with Docker and a very simple server application using Express js.
-
-The idea is to distribute requests and load across multiple instances of the server application.
-
-With docker compose, you are setting up three containers. Two server containers and one nginx server container.
-
-# Prerequisites
-
-* Node/Npm
-* Docker
-
-# NGINX conf
-
-The configuration file for nginx (nginx.conf) configures which server urls to distribute the load to, in a round robin manner.
-
-If you would like to change the ports, don't forget to change the ports in the docker-compose file aswell.
-
-# How to use
-
-Clone the repo:
-
-```git clone https://github.com/idaloof/nginx-load-balancer.git```
-
-Install express:
-
-```npm install```
-
-Build images and run the containers:
-
-```docker-compose up --build```
-
-Open a browser (preferably in incognito mode) and go to:
-
-```localhost:80```
-
-If you refresh the page, you should see the port number changing. This is the idea behind load balancing, where NGINX distributes the requests across the different servers.
-
-You can also use the curl command to access the NGINX server:
-
-```curl -s localhost:80```
-
-Repeat the command to see NGINX in action.
-
-# How to shut down
-
-To shut down all servers, remove containers and remove images use:
-
-```docker-compose down --rmi all```
+#
