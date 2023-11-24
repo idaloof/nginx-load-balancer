@@ -65,6 +65,16 @@ Close: ```docker-compose down --rmi all```
 
 # Results
 
-The results were a bit surprising. 
+Test configuration:
 
-![Locus Test Report - with load balance](./img/image.png)
+Users: 3000
+Spawn rate: 100
+Test duration: 2 minutes
+
+You can see the results below.
+
+## With NGINX
+
+![Locus Test Report - tables](./img/image.png)
+
+![Locus Test Report - charts](./img/image2.png)
